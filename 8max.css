@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1d1f2a;
+    color: #fff;
+}
+
+header {
+    background-color: #222;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+header .actions {
+    display: flex;
+    gap: 20px;
+}
+
+button {
+    background-color: #ff8000;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type="search"] {
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+}
+
+main {
+    padding: 20px;
+}
+
+.banners {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.banner {
+    background-color: #333;
+    padding: 20px;
+    flex: 1;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.banner span {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.game-list {
+    display: flex;
+    gap: 15px;
+}
+
+.game-item {
+    background-color: #444;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    flex: 1;
+}
+
+footer {
+    background-color: #222;
+    padding: 20px;
+    text-align: center;
+}
+
+footer .footer-links a {
+    color: #fff;
+    margin: 0 10px;
+    text-decoration: none;
+}
