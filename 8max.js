@@ -107,7 +107,95 @@
         window.addEventListener('hashchange', () => {
             activateByHash(location.hash);
         });
+        // Funcionalidade dos modais de login e registro
+    (function setupModals() {
+        console.log('Inicializando modais');
+        
+        // Seletores para todos os botões (PC e mobile)
+        const loginButtons = document.querySelectorAll('.entrar');
+        const registerButtons = document.querySelectorAll('.registrar');
+        
+        console.log('Botões de login encontrados:', loginButtons.length);
+        console.log('Botões de registro encontrados:', registerButtons.length);
+        
+        const loginModal = document.getElementById('login-modal');
+        const registerModal = document.getElementById('register-modal');
+        
+        console.log('Modal de login encontrado:', !!loginModal);
+        console.log('Modal de registro encontrado:', !!registerModal);
+        
+        const closeButtons = document.querySelectorAll('.modal-close');
+        const overlays = document.querySelectorAll('.modal-overlay');
+        
+        // Função para abrir modal
+        function openModal(modal) {
+            if (!modal) return;
+            modal.classList.add('active');
+            modal.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        // Função para fechar modal
+        function closeModal(modal) {
+            if (!modal) return;
+            modal.classList.remove('active');
+            modal.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = '';
+        }
+        
+        // Fechar todos os modais
+        function closeAllModals() {
+            document.querySelectorAll('.modal').forEach(modal => {
+                closeModal(modal);
+            });
+        }
+        
+        // Event listeners para todos os botões de login (PC e mobile)
+        loginButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                openModal(loginModal);
+            });
+        });
+        
+        // Event listeners para todos os botões de registro (PC e mobile)
+        registerButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                openModal(registerModal);
+            });
+        });
+        
+        // Event listeners para botões de fechar
+        closeButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                closeAllModals();
+            });
+        });
+        
+        // Event listeners para overlays
+        overlays.forEach(overlay => {
+            overlay.addEventListener('click', () => {
+                closeAllModals();
+            });
+        });
+        
+        // Fechar com tecla ESC
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeAllModals();
+        });
+        
+        // Prevenir envio dos formulários (apenas para demonstração)
+        const forms = document.querySelectorAll('form');
+        forms.forEach(form => {
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert('Funcionalidade em desenvolvimento!');
+                closeAllModals();
+            });
+        });
     })();
+})();
 
     // Mobile banners slider with autoplay
     const track = document.querySelector('.banners-track');

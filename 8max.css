@@ -263,6 +263,11 @@ main { padding: var(--space-6) 0; }
     text-align: left;
     display: flex; flex-direction: column; gap: var(--space-3);
     border: 1px solid rgba(255,255,255,0.05);
+    transition: border-color 0.3s ease;
+}
+
+.banner:hover {
+    border-color: var(--color-primary);
 }
 
 .banner .icon { display: inline-flex; align-items: center; justify-content: center; width: var(--icon-lg); height: var(--icon-lg); margin-bottom: var(--space-2); }
@@ -449,7 +454,7 @@ footer { background-color: var(--color-surface); padding: var(--space-6) 0 var(-
 .footer-text { color: var(--color-muted); line-height: 1.6; }
 
 .footer-list { list-style: none; display: grid; gap: var(--space-2); }
-.footer-list a { color: var(--color-text); text-decoration: none; opacity: .9; transition: color .2s ease, opacity .2s ease, background-color .2s ease; padding: 4px 6px; border-radius: 6px; }
+.footer-list a { color: var(--color-text); text-decoration: none; opacity: .9; transition: color .2s ease, opacity .2s ease, background-color .2s ease; padding: 4px 6px; border-radius: 6px; white-space: nowrap; }
 .footer-list a:hover { background: rgba(255,255,255,0.06); }
 .footer-list a:focus-visible { outline: auto; box-shadow: none; }
 .footer-list a svg { width: var(--icon-sm); height: var(--icon-sm); }
@@ -470,6 +475,119 @@ footer .footer-links { display: none; }
 
 /* Utility for programmatic active state */
 .is-active { color: var(--color-primary) !important; }
+
+/* Modais */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+}
+
+.modal.active {
+    display: block;
+}
+
+.modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-container {
+    position: relative;
+    width: 90%;
+    max-width: 400px;
+    margin: 80px auto 0;
+    background-color: var(--color-surface);
+    border-radius: var(--radius-md);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-3) var(--space-4);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.modal-header h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--color-text);
+}
+
+.modal-close {
+    background: transparent;
+    border: none;
+    color: var(--color-muted);
+    font-size: 24px;
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+}
+
+.modal-close:hover {
+    color: var(--color-text);
+}
+
+.modal-body {
+    padding: var(--space-4);
+}
+
+.form-group {
+    margin-bottom: var(--space-3);
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: var(--space-1);
+    color: var(--color-muted);
+    font-size: 14px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: var(--space-2);
+    background-color: var(--color-surface-2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-sm);
+    color: var(--color-text);
+    font-size: 16px;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: var(--focus-ring);
+}
+
+.btn-primary {
+    display: block;
+    width: 100%;
+    padding: var(--space-2);
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    border-radius: var(--radius-sm);
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    margin-top: var(--space-4);
+}
+
+.btn-primary:hover {
+    background-color: var(--color-primary-700);
+}
 
 /* Mobile-first adjustments */
 @media (max-width: 767px) {
