@@ -1,55 +1,232 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<link rel="stylesheet" href="8max.css">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Plataforma de Apostas</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="8max.css">
+    
 </head>
 <body>
+    <div class="overlay" hidden></div>
     <header>
         <nav>
-            <div class="logo">9000.com</div>
+            <div class="container">
+                <button class="hamburger" aria-label="Abrir menu" aria-controls="mobile-drawer" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div class="logo">8max.com</div>
+                <ul class="nav-links">
+                    <li><a href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><g class="home-outline"><path fill="#fff" fill-rule="evenodd" d="M10.033 2.883a3 3 0 0 1 3.934 0l7 6.076A3 3 0 0 1 22 11.225V19a3 3 0 0 1-3 3h-3.5a1.5 1.5 0 0 1-1.5-1.5v-6.813h-4V20.5A1.5 1.5 0 0 1 8.5 22H5a3 3 0 0 1-3-3v-7.775a3 3 0 0 1 1.033-2.266zm2.623 1.51a1 1 0 0 0-1.312 0l-7 6.077a1 1 0 0 0-.344.755V19a1 1 0 0 0 1 1h3v-6.313a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2V20h3a1 1 0 0 0 1-1v-7.775a1 1 0 0 0-.345-.755z" class="Vector (Stroke)" clip-rule="evenodd"/></g></svg>
+                        <span>Início</span></a></li>
+                    <li><a href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="#fff" d="M22 12v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-8a1 1 0 0 1-1-1V8a2 2 0 0 1 2-2h3.17A3 3 0 0 1 6 5a3 3 0 0 1 3-3c1 0 1.88.5 2.43 1.24v-.01L12 4l.57-.77v.01C13.12 2.5 14 2 15 2a3 3 0 0 1 3 3a3 3 0 0 1-.17 1H21a2 2 0 0 1 2 2v3a1 1 0 0 1-1 1M4 20h7v-8H4zm16 0v-8h-7v8zM9 4a1 1 0 0 0-1 1a1 1 0 0 0 1 1a1 1 0 0 0 1-1a1 1 0 0 0-1-1m6 0a1 1 0 0 0-1 1a1 1 0 0 0 1 1a1 1 0 0 0 1-1a1 1 0 0 0-1-1M3 8v2h8V8zm10 0v2h8V8z"/></svg>
+                        <span>Promoção</span></a></li>
+                    <li><a href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8H5m12 0a1 1 0 0 1 1 1v2.6M17 8l-4-4M5 8a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.6M5 8l4-4l4 4m6 4h-4a2 2 0 1 0 0 4h4a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/></svg>
+                        <span>Depósito</span></a></li>
+                    <li><a href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 10H4l5.5-6M4 14h16l-5.5 6"/></svg>
+                        <span>Saque</span></a></li>
+                    <li><a href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="#fff" d="M12 4a4 4 0 1 0 0 8a4 4 0 0 0 0-8M6 8a6 6 0 1 1 12 0A6 6 0 0 1 6 8m2 10a3 3 0 0 0-3 3a1 1 0 1 1-2 0a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5a1 1 0 1 1-2 0a3 3 0 0 0-3-3z"/></svg>
+                        <span>Perfil</span></a></li>
+                </ul>
             <div class="actions">
-                <button class="entrar">Entrar</button>
-                <button class="registrar">Registrar</button>
-                <input type="search" placeholder="Pesquisar...">
+                    <div class="wallet" role="button" aria-label="Carteira - Saldo disponível">
+                        <span class="icon" aria-hidden="true"></span>
+                        <span class="balance">R$ 0,00</span>
+                    </div>
+                    <div class="search">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="#fff" d="M10 18a7.95 7.95 0 0 0 4.897-1.688l4.396 4.396l1.414-1.414l-4.396-4.396A7.95 7.95 0 0 0 18 10c0-4.411-3.589-8-8-8s-8 3.589-8 8s3.589 8 8 8m0-14c3.309 0 6 2.691 6 6s-2.691 6-6 6s-6-2.691-6-6s2.691-6 6-6"/></svg>
+                        <input type="search" placeholder="Pesquisar..." aria-label="Pesquisar">
+                    </div>
+                    <button class="entrar with-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="#fff" d="M12 3a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2h-6v6a1 1 0 1 1-2 0v-6H5a1 1 0 1 1 0-2h6V4a1 1 0 0 1 1-1"/></svg><span>Entrar</span></button>
+                    <button class="registrar with-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="#fff" d="M12 4a4 4 0 1 0 0 8a4 4 0 0 0 0-8m-6 8a6 6 0 1 1 12 0a6 6 0 0 1-12 0m11 7a1 1 0 1 1 0 2H7a1 1 0 1 1 0-2z"/></svg><span>Registrar</span></button>
+                </div>
             </div>
         </nav>
+        <aside id="mobile-drawer" class="mobile-drawer" aria-hidden="true">
+            <div class="drawer-header">
+                <div class="drawer-logo">8max.com</div>
+                <button class="drawer-close" aria-label="Fechar menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m7 7l10 10M7 17L17 7"/></svg>
+                </button>
+            </div>
+            <ul class="drawer-links">
+                <li><a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><g class="home-outline"><path fill="#fff" fill-rule="evenodd" d="M10.033 2.883a3 3 0 0 1 3.934 0l7 6.076A3 3 0 0 1 22 11.225V19a3 3 0 0 1-3 3h-3.5a1.5 1.5 0 0 1-1.5-1.5v-6.813h-4V20.5A1.5 1.5 0 0 1 8.5 22H5a3 3 0 0 1-3-3v-7.775a3 3 0 0 1 1.033-2.266zm2.623 1.51a1 1 0 0 0-1.312 0l-7 6.077a1 1 0 0 0-.344.755V19a1 1 0 0 0 1 1h3v-6.313a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2V20h3a1 1 0 0 0 1-1v-7.775a1 1 0 0 0-.345-.755z" class="Vector (Stroke)" clip-rule="evenodd"/></g></svg>
+                    <span>Início</span></a></li>
+                <li><a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="#fff" d="M22 12v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-8a1 1 0 0 1-1-1V8a2 2 0 0 1 2-2h3.17A3 3 0 0 1 6 5a3 3 0 0 1 3-3c1 0 1.88.5 2.43 1.24v-.01L12 4l.57-.77v.01C13.12 2.5 14 2 15 2a3 3 0 0 1 3 3a3 3 0 0 1-.17 1H21a2 2 0 0 1 2 2v3a1 1 0 0 1-1 1M4 20h7v-8H4zm16 0v-8h-7v8zM9 4a1 1 0 0 0-1 1a1 1 0 0 0 1 1a1 1 0 0 0 1-1a1 1 0 0 0-1-1m6 0a1 1 0 0 0-1 1a1 1 0 0 0 1 1a1 1 0 0 0 1-1a1 1 0 0 0-1-1M3 8v2h8V8zm10 0v2h8V8z"/></svg>
+                    <span>Promoção</span></a></li>
+                <li><a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8H5m12 0a1 1 0 0 1 1 1v2.6M17 8l-4-4M5 8a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.6M5 8l4-4l4 4m6 4h-4a2 2 0 1 0 0 4h4a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/></svg>
+                    <span>Depósito</span></a></li>
+                <li><a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 10H4l5.5-6M4 14h16l-5.5 6"/></svg>
+                    <span>Saque</span></a></li>
+                <li><a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="#fff" d="M12 4a4 4 0 1 0 0 8a4 4 0 0 0 0-8M6 8a6 6 0 1 1 12 0A6 6 0 0 1 6 8m2 10a3 3 0 0 0-3 3a1 1 0 1 1-2 0a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5a1 1 0 1 1-2 0a3 3 0 0 0-3-3z"/></svg>
+                    <span>Perfil</span></a></li>
+            </ul>
+            <div class="drawer-actions">
+                <button class="entrar with-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="#fff" d="M12 3a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2h-6v6a1 1 0 1 1-2 0v-6H5a1 1 0 1 1 0-2h6V4a1 1 0 0 1 1-1"/></svg><span>Entrar</span></button>
+                <button class="registrar with-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="#fff" d="M12 4a4 4 0 1 0 0 8a4 4 0 0 0 0-8m-6 8a6 6 0 1 1 12 0a6 6 0 0 1-12 0m11 7a1 1 0 1 1 0 2H7a1 1 0 1 1 0-2z"/></svg><span>Registrar</span></button>
+            </div>
+        </aside>
     </header>
     <main>
+        <div class="container">
         <section class="banners">
+                <button class="banners-arrow prev" aria-label="Anterior" type="button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="#fff" d="m15.41 7.41l-1.41-1.41l-6 6l6 6l1.41-1.41l-4.59-4.59z"/></svg>
+                </button>
+                <div class="banners-track">
             <div class="banner primeiro-deposito">
+                        <img class="banner-img" src="https://i.ibb.co/HLfv5c03/Primeiro-Dep-sito.png" alt="Primeiro Depósito">
+                        <div class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="#fff" d="m15.45 16.52l-3.01-3.01c-.11-.11-.24-.13-.31-.13s-.2.02-.31.13L8.8 16.53c-.34.34-.87.89-2.64.89l3.71 3.7a3 3 0 0 0 4.24 0l3.72-3.71c-.91 0-1.67-.18-2.38-.89M8.8 7.47l3.02 3.02c.08.08.2.13.31.13s.23-.05.31-.13l2.99-2.99c.71-.74 1.52-.91 2.43-.91l-3.72-3.71a3 3 0 0 0-4.24 0l-3.71 3.7c1.76 0 2.3.58 2.61.89"/><path fill="#fff" d="m21.11 9.85l-2.25-2.26H17.6c-.54 0-1.08.22-1.45.61l-3 3c-.28.28-.65.42-1.02.42a1.5 1.5 0 0 1-1.02-.42L8.09 8.17c-.38-.38-.9-.6-1.45-.6H5.17l-2.29 2.3a3 3 0 0 0 0 4.24l2.29 2.3h1.48c.54 0 1.06-.22 1.45-.6l3.02-3.02c.28-.28.65-.42 1.02-.42s.74.14 1.02.42l3.01 3.01c.38.38.9.6 1.45.6h1.26l2.25-2.26a3.04 3.04 0 0 0-.02-4.29"/></svg>
+                        </div>
                 <span>Primeiro Depósito</span>
-                <button>Bônus Até R$</button>
+                        <div class="details">Receba bônus no seu primeiro aporte</div>
+                        <button class="with-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="#fff" d="M12 3a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2h-6v6a1 1 0 1 1-2 0v-6H5a1 1 0 1 1 0-2h6V4a1 1 0 0 1 1-1"/></svg><span>Bônus Até R$ 150</span></button>
             </div>
             <div class="banner promocoes">
+                        <img class="banner-img" src="https://i.ibb.co/B2xXMK1W/Promo-es-e-B-nus.png" alt="Promoções e Bônus">
+                        <div class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="#fff" d="M22 12v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-8a1 1 0 0 1-1-1V8a2 2 0 0 1 2-2h3.17A3 3 0 0 1 6 5a3 3 0 0 1 3-3c1 0 1.88.5 2.43 1.24v-.01L12 4l.57-.77v.01C13.12 2.5 14 2 15 2a3 3 0 0 1 3 3a3 3 0 0 1-.17 1H21a2 2 0 0 1 2 2v3a1 1 0 0 1-1 1M4 20h7v-8H4zm16 0v-8h-7v8zM9 4a1 1 0 0 0-1 1a1 1 0 0 0 1 1a1 1 0 0 0 1-1a1 1 0 0 0-1-1m6 0a1 1 0 0 0-1 1a1 1 0 0 0 1 1a1 1 0 0 0 1-1a1 1 0 0 0-1-1M3 8v2h8V8zm10 0v2h8V8z"/></svg>
+                        </div>
                 <span>Promoções e Bônus</span>
                 <button>Centro de Atividades</button>
             </div>
             <div class="banner amigos">
+                        <img class="banner-img" src="https://i.ibb.co/kFR3bYZ/Convide-Amigos-E-Ganhe-B-nus.png" alt="Convide Amigos E Ganhe Bônus">
+                        <div class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 640 512"><path fill="#fff" d="M320 16a104 104 0 1 1 0 208a104 104 0 1 1 0-208M96 88a72 72 0 1 1 0 144a72 72 0 1 1 0-144M0 416c0-70.7 57.3-128 128-128c12.8 0 25.2 1.9 36.9 5.4C132 330.2 112 378.8 112 432v16c0 11.4 2.4 22.2 6.7 32H32c-17.7 0-32-14.3-32-32zm521.3 64c4.3-9.8 6.7-20.6 6.7-32v-16c0-53.2-20-101.8-52.9-138.6c11.7-3.5 24.1-5.4 36.9-5.4c70.7 0 128 57.3 128 128v32c0 17.7-14.3 32-32 32zM472 160a72 72 0 1 1 144 0a72 72 0 1 1-144 0M160 432c0-88.4 71.6-160 160-160s160 71.6 160 160v16c0 17.7-14.3 32-32 32H192c-17.7 0-32-14.3-32-32z"/></svg>
+                        </div>
                 <span>Convide Amigos E Ganhe Bônus</span>
             </div>
+                </div>
+                <button class="banners-arrow next" aria-label="Próximo" type="button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="#fff" d="m8.59 16.59l1.41 1.41l6-6l-6-6l-1.41 1.41l4.59 4.59z"/></svg>
+                </button>
+                <div class="banners-dots" role="tablist" aria-label="Progresso dos banners"></div>
         </section>
         <section class="games">
             <h2>Popular</h2>
             <div class="game-list">
-                
-                <div class="game-item">Jogo 1</div>
-                <div class="game-item">Jogo 2</div>
-                <div class="game-item">Jogo 3</div>
+                <div class="game-item">
+                    <img src="https://i.ibb.co/dJgPkkr9/fortune-rabbit-appicon-rounded.png" alt="Fortune Rabbit" class="game-image">
+                    <div class="game-badge">Best</div>
+                    <button class="favorite-btn game-fav" aria-label="Favorito" title="Favorito">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5C2 6 4 4 6.5 4C8.04 4 9.54 4.81 10.35 6.09C11.16 4.81 12.66 4 14.2 4C16.7 4 18.7 6 18.7 8.5c0 3.78-3.4 6.86-8.05 11.54z"/></svg>
+                    </button>
+                    <button class="play-button">Jogar</button>
+                    <div class="title">Fortune Rabbit</div>
+                    <div class="meta">Slots</div>
+                </div>
+                <div class="game-item">
+                    <img src="https://i.ibb.co/nM8BPWjn/fortune-tiger-app-icon-rounded.png" alt="Fortune Tiger" class="game-image">
+                    <div class="game-badge">Best</div>
+                    <button class="favorite-btn game-fav" aria-label="Favorito" title="Favorito">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5C2 6 4 4 6.5 4C8.04 4 9.54 4.81 10.35 6.09C11.16 4.81 12.66 4 14.2 4C16.7 4 18.7 6 18.7 8.5c0 3.78-3.4 6.86-8.05 11.54z"/></svg>
+                    </button>
+                    <button class="play-button">Jogar</button>
+                    <div class="title">Fortune Tiger</div>
+                    <div class="meta">Slots</div>
+                </div>
+                <div class="game-item">
+                    <img src="https://i.ibb.co/4RdJPXBN/fortune-snake-icon-1024-rounded.png" alt="Fortune Snake" class="game-image">
+                    <div class="game-badge">Best</div>
+                    <button class="favorite-btn game-fav" aria-label="Favorito" title="Favorito">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5C2 6 4 4 6.5 4C8.04 4 9.54 4.81 10.35 6.09C11.16 4.81 12.66 4 14.2 4C16.7 4 18.7 6 18.7 8.5c0 3.78-3.4 6.86-8.05 11.54z"/></svg>
+                    </button>
+                    <button class="play-button">Jogar</button>
+                    <div class="title">Fortune Snake</div>
+                    <div class="meta">Slots</div>
+                </div>
+                <div class="game-item">
+                    <img src="https://i.ibb.co/PsNx7hWZ/fortune-dragon-icon-1024-rounded.png" alt="Fortune Dragon" class="game-image">
+                    <div class="game-badge">Best</div>
+                    <button class="favorite-btn game-fav" aria-label="Favorito" title="Favorito">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5C2 6 4 4 6.5 4C8.04 4 9.54 4.81 10.35 6.09C11.16 4.81 12.66 4 14.2 4C16.7 4 18.7 6 18.7 8.5c0 3.78-3.4 6.86-8.05 11.54z"/></svg>
+                    </button>
+                    <button class="play-button">Jogar</button>
+                    <div class="title">Fortune Dragon</div>
+                    <div class="meta">Slots</div>
+                </div>
+                <div class="game-item">
+                    <img src="https://i.ibb.co/Vcp8dR2n/fortune-ox-icon-1024-rounded.png" alt="Fortune Ox" class="game-image">
+                    <div class="game-badge">Best</div>
+                    <button class="favorite-btn game-fav" aria-label="Favorito" title="Favorito">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5C2 6 4 4 6.5 4C8.04 4 9.54 4.81 10.35 6.09C11.16 4.81 12.66 4 14.2 4C16.7 4 18.7 6 18.7 8.5c0 3.78-3.4 6.86-8.05 11.54z"/></svg>
+                    </button>
+                    <button class="play-button">Jogar</button>
+                    <div class="title">Fortune Ox</div>
+                    <div class="meta">Slots</div>
+                </div>
+                <div class="game-item">
+                    <img src="https://i.ibb.co/HTDktsZz/fortune-mouse-rounded-1024.png" alt="Fortune Mouse" class="game-image">
+                    <div class="game-badge">Best</div>
+                    <button class="favorite-btn game-fav" aria-label="Favorito" title="Favorito">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5C2 6 4 4 6.5 4C8.04 4 9.54 4.81 10.35 6.09C11.16 4.81 12.66 4 14.2 4C16.7 4 18.7 6 18.7 8.5c0 3.78-3.4 6.86-8.05 11.54z"/></svg>
+                    </button>
+                    <button class="play-button">Jogar</button>
+                    <div class="title">Fortune Mouse</div>
+                    <div class="meta">Slots</div>
+                </div>
             </div>
         </section>
+        </div>
     </main>
     <footer>
-        <div class="footer-links">
-            <a href="#">Início</a>
-            <a href="#">Promoção</a>
-            <a href="#">Depósito</a>
-            <a href="#">Saque</a>
-            <a href="#">Perfil</a>
+        <div class="container">
+            <div class="footer">
+                <div class="footer-col brand">
+                    <div class="footer-logo">8max.com</div>
+                    <p class="footer-text">A melhor experiência em apostas esportivas e cassino online. Bônus, promoções e suporte 24/7.</p>
+                </div>
+                <div class="footer-col">
+                    <div class="footer-title">Plataforma</div>
+                    <ul class="footer-list">
+                        <li><a href="#">Início</a></li>
+                        <li><a href="#">Promoção</a></li>
+                        <li><a href="#">Depósito</a></li>
+                        <li><a href="#">Saque</a></li>
+                        <li><a href="#">Perfil</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <div class="footer-title">Suporte</div>
+                    <ul class="footer-list">
+                        <li><a href="#">Central de Ajuda</a></li>
+                        <li><a href="#">Termos de Uso</a></li>
+                        <li><a href="#">Política de Privacidade</a></li>
+                        <li><a href="#">Responsabilidade</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <div class="footer-title">Siga a 8max</div>
+                    <ul class="footer-tags">
+                        <li class="with-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="#fff" d="M12.001 9a3 3 0 1 0 0 6a3 3 0 0 0 0-6m0-2a5 5 0 1 1 0 10a5 5 0 0 1 0-10m6.5-.25a1.25 1.25 0 0 1-2.5 0a1.25 1.25 0 0 1 2.5 0M12.001 4c-2.474 0-2.878.007-4.029.058c-.784.037-1.31.142-1.798.332a2.9 2.9 0 0 0-1.08.703a2.9 2.9 0 0 0-.704 1.08c-.19.49-.295 1.015-.331 1.798C4.007 9.075 4 9.461 4 12c0 2.475.007 2.878.058 4.029c.037.783.142 1.31.331 1.797c.17.435.37.748.702 1.08c.337.336.65.537 1.08.703c.494.191 1.02.297 1.8.333C9.075 19.994 9.461 20 12 20c2.475 0 2.878-.007 4.029-.058c.782-.037 1.308-.142 1.797-.331a2.9 2.9 0 0 0 1.08-.703c.337-.336.538-.649.704-1.08c.19-.492.296-1.018.332-1.8c.047-1.103.06-1.405.06-4.028c0-2.474-.007-2.878-.058-4.029c-.037-.782-.143-1.31-.332-1.798a2.9 2.9 0 0 0-.703-1.08a2.9 2.9 0 0 0-1.08-.704c-.49-.19-1.016-.295-1.798-.331C14.926 4.006 14.54 4 12 4m0-2c2.717 0 3.056.01 4.123.06c1.064.05 1.79.217 2.427.465c.66.254 1.216.598 1.772 1.153a4.9 4.9 0 0 1 1.153 1.772c.247.637.415 1.363.465 2.428c.047 1.066.06 1.405.06 4.122s-.01 3.056-.06 4.122s-.218 1.79-.465 2.428a4.9 4.9 0 0 1-1.153 1.772a4.9 4.9 0 0 1-1.772 1.153c-.637.247-1.363.415-2.427.465c-1.067.047-1.406.06-4.123.06s-3.056-.01-4.123-.06c-1.064-.05-1.789-.218-2.427-.465a4.9 4.9 0 0 1-1.772-1.153a4.9 4.9 0 0 1-1.153-1.772c-.248-.637-.415-1.363-.465-2.428C2.012 15.056 2 14.717 2 12s.01-3.056.06-4.122s.217-1.79.465-2.428a4.9 4.9 0 0 1 1.153-1.772A4.9 4.9 0 0 1 5.45 2.525c.637-.248 1.362-.415 2.427-.465C8.945 2.013 9.284 2 12.001 2"/></svg><span>Instagram</span></li>
+                        <li class="with-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 20 20"><path fill="#fff" d="M8.46 18h2.93v-7.3h2.45l.37-2.84h-2.82V6.04c0-.82.23-1.38 1.41-1.38h1.51V2.11c-.26-.03-1.15-.11-2.19-.11c-2.18 0-3.66 1.33-3.66 3.76v2.1H6v2.84h2.46z"/></svg><span>Facebook</span></li>
+                        <li class="with-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14"><g fill="none"><g clip-path="url(#SVGG1Ot4cAD)"><path fill="#fff" d="M11.025.656h2.147L8.482 6.03L14 13.344H9.68L6.294 8.909l-3.87 4.435H.275l5.016-5.75L0 .657h4.43L7.486 4.71zm-.755 11.4h1.19L3.78 1.877H2.504z"/></g><defs><clipPath id="SVGG1Ot4cAD"><path fill="#fff" d="M0 0h14v14H0z"/></clipPath></defs></g></svg><span>Twitter</span></li>
+                        <li class="with-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><g fill="none"><path d="m12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z"/><path fill="#fff" d="M12 4c.855 0 1.732.022 2.582.058l1.004.048l.961.057l.9.061l.822.064a3.8 3.8 0 0 1 3.494 3.423l.04.425l.075.91c.07.943.122 1.971.122 2.954s-.052 2.011-.122 2.954l-.075.91l-.04.425a3.8 3.8 0 0 1-3.495 3.423l-.82.063l-.9.062l-.962.057l-1.004.048A62 62 0 0 1 12 20a62 62 0 0 1-2.582-.058l-1.004-.048l-.961-.057l-.9-.062l-.822-.063a3.8 3.8 0 0 1-3.494-3.423l-.04-.425l-.075-.91A41 41 0 0 1 2 12c0-.983.052-2.011.122-2.954l.075-.91l.04-.425A3.8 3.8 0 0 1 5.73 4.288l.821-.064l.9-.061l.962-.057l1.004-.048A62 62 0 0 1 12 4m0 2c-.825 0-1.674.022-2.5.056l-.978.047l-.939.055l-.882.06l-.808.063a1.8 1.8 0 0 0-1.666 1.623C4.11 9.113 4 10.618 4 12s.11 2.887.227 4.096c.085.872.777 1.55 1.666 1.623l.808.062l.882.06l.939.056l.978.047c.826.034 1.675.056 2.5.056s1.674-.022 2.5-.056l.978-.047l.939-.055l.882-.06l.808-.063a1.8 1.8 0 0 0 1.666-1.623C19.89 14.887 20 13.382 20 12s-.11-2.887-.227-4.096a1.8 1.8 0 0 0-1.666-1.623l-.808-.062l-.882-.06l-.939-.056l-.978-.047A61 61 0 0 0 12 6m-2 3.575a.6.6 0 0 1 .819-.559l.081.04l4.2 2.424a.6.6 0 0 1 .085.98l-.085.06l-4.2 2.425a.6.6 0 0 1-.894-.43l-.006-.09z"/></g></svg><span>YouTube</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2025 8max.com • Todos os direitos reservados</span>
+            </div>
         </div>
     </footer>
+    <script src="8max.js"></script>
 </body>
 </html>
