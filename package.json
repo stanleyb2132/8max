@@ -1,0 +1,24 @@
+{
+  "name": "8max-casino",
+  "version": "1.0.0",
+  "description": "8max Casino - Plataforma de apostas e jogos online",
+  "main": "8max.html",
+  "scripts": {
+    "start": "npx serve .",
+    "dev": "npx serve .",
+    "build": "echo 'No build process needed for static HTML'",
+    "test": "echo 'No tests specified'"
+  },
+  "keywords": [
+    "casino",
+    "apostas",
+    "jogos",
+    "html",
+    "css",
+    "javascript"
+  ],
+  "author": "8max",
+  "license": "ISC",
+  "devDependencies": {},
+  "dependencies": {}
+}
