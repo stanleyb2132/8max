@@ -217,7 +217,7 @@ button:focus-visible { outline: auto; box-shadow: none; }
 .drawer-close svg path { stroke: var(--color-primary); }
 
 /* Overlay and mobile drawer */
-.overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.5); backdrop-filter: blur(2px); z-index: 80; }
+.overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.5); backdrop-filter: blur(2px); z-index: 90; }
 
 .mobile-drawer {
     position: fixed;
@@ -228,6 +228,7 @@ button:focus-visible { outline: auto; box-shadow: none; }
     transition: transform .25s ease;
     z-index: 100;
     display: flex; flex-direction: column; padding: var(--space-4); gap: var(--space-4);
+    pointer-events: auto;
 }
 
 .mobile-drawer.open { transform: translateX(0); }

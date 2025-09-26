@@ -11,6 +11,8 @@
             drawer.setAttribute('aria-hidden', 'false');
             hamburger.setAttribute('aria-expanded', 'true');
             overlay.hidden = false;
+            overlay.style.backdropFilter = 'none';
+            overlay.style.pointerEvents = 'none';
             body.style.overflow = 'hidden';
         }
         function closeDrawer() {
@@ -18,6 +20,8 @@
             drawer.setAttribute('aria-hidden', 'true');
             hamburger.setAttribute('aria-expanded', 'false');
             overlay.hidden = true;
+            overlay.style.backdropFilter = 'blur(4px)';
+            overlay.style.pointerEvents = 'auto';
             body.style.overflow = '';
         }
         hamburger.addEventListener('click', () => {
