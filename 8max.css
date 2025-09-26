@@ -383,9 +383,11 @@ main { padding: var(--space-6) 0; }
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     z-index: 1;
     transition: transform 0.5s ease;
+    padding: 10px;
+    border-radius: var(--radius-md);
 }
 
 .game-item .play-button {
@@ -651,6 +653,17 @@ footer .footer-links { display: none; }
     .modal-dialog {
         width: 95%;
         max-width: none;
+    }
+    
+    /* Esconder botão de jogar em dispositivos móveis quando clicar no banner */
+    .game-item:active .play-button,
+    .game-item:focus .play-button {
+        display: none !important;
+    }
+    
+    /* Fazer com que o clique no banner seja direto */
+    .game-item {
+        cursor: pointer;
     }
 }
 
